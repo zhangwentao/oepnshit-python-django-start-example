@@ -3,7 +3,7 @@ import os,sys
 
 virtenv = os.environ['OPENSHIFT_PYTHON_DIR'] + '/virtenv/'
 virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
-sys.path.append(os.getcwd()+'/source/')
+sys.path.append(os.getcwd()+'/sources/')
 try:
     execfile(virtualenv, dict(__file__=virtualenv))
 except IOError:
