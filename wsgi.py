@@ -3,7 +3,7 @@ import os,sys
 
 virtenv = os.environ['OPENSHIFT_PYTHON_DIR'] + '/virtenv/'
 virtualenv = os.path.join(virtenv, 'bin/activate_this.py')
-sys.path.append('/var/lib/openshift/5454decb4382ec63e1000319/app-deployments/current/repo/sources')
+sys.path.append(os.environ.get('OPENSHIFT_DEPLOYMENTS_DIR')+'current/repo/sources')
 try:
     execfile(virtualenv, dict(__file__=virtualenv))
 except IOError:
